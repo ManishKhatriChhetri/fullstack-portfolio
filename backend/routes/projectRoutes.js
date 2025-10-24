@@ -1,4 +1,4 @@
-const express = required('express');
+const express = require('express');
 const router = express.Router();
 const {
     getAllProjects,
@@ -7,7 +7,7 @@ const {
     createProject,
     updateProject,
     deleteProject
-} = require('./controllers/projectController');
+} = require('../controllers/projectController');
 
 //Public routes
 router.get('/', getAllProjects);
