@@ -1,5 +1,6 @@
 const Project = require('../models/Project')
 
+// Get all projects
 exports.getAllProjects = async (req, res) => {
     try {
         const projects = await Project.find().sort({order: 1});
@@ -19,6 +20,7 @@ exports.getAllProjects = async (req, res) => {
     }
 }
 
+//Get featured projects
 exports.getFeaturedProjects = async (req, res) => {
     try {
         const projects = await Project.find({featured: true}).sort({order: 1});
@@ -38,7 +40,8 @@ exports.getFeaturedProjects = async (req, res) => {
     }
 }
 
-exports.getProjectsById = async (req, res) => {
+// Get single project
+exports.getProjectById = async (req, res) => {
     try {
         const project = await Project.findById(req.params.id);
 
@@ -63,6 +66,7 @@ exports.getProjectsById = async (req, res) => {
     }
 }
 
+// Create new project
 exports.createProject = async (req, res) => {
     try {
         const project = Project.create(req.body);
@@ -80,6 +84,7 @@ exports.createProject = async (req, res) => {
     }
 }
 
+// Update project
 exports.updateProject = async (req, res) => {
     try {
         const project = Project.findIdAndUpdate(
@@ -110,6 +115,7 @@ exports.updateProject = async (req, res) => {
     }
 }
 
+// Delete project
 exports.deleteProject = async (req, res) => {
     try {
         const project = Project.findByIdAndDelete(req.params.id);
