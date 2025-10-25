@@ -1,11 +1,14 @@
 import { useState } from 'react'
-
+import { BrowserRouter as Router } from 'react-router-dom'
+import Navbar from './components/Navbar'
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-      <h1>Vite + React</h1>
+      <Router>
+        <Navbar />
+      </Router>
+      
     </>
   )
 }
