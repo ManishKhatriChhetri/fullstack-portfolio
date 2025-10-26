@@ -32,7 +32,7 @@ const Footer = () => {
         >
             <Container maxWidth='lg'>
 
-                <Box sx={{display: 'flex', justifyContent: 'center', gap: 4, mb: 3}}>
+                <Box sx={{display: 'flex', justifyContent: 'center', gap: 5, mb: 3}}>
                     {
                         socialLinks.map((link, index) => (
                             <IconButton
