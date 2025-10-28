@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Education = () => {
   const educationalInstitutions = [
@@ -27,42 +28,64 @@ const Education = () => {
   ];
 
   return (
-    <Container sx={{ py: 8 }}>
-      <Typography variant="h2" sx={{ textAlign: "center", mb: 2 }}>
-        Education
-      </Typography>
-      <Typography
-        variant="body1"
-        color="text.secondary"
-        sx={{ mb: 6, textAlign: "center", maxWidth: 600, mx: "auto" }}
+    <Container sx={{ py: 4 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5}}
       >
-        My academic background and qualifications
-      </Typography>
-      <Grid container spacing={4} justifyContent="center">
-        {educationalInstitutions.map((institution, index) => (
-          <Grid item key={index}>
-            <Card>
-              <CardContent sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, p: 4}}>
-                <Box
-                  component="img"
-                  src={institution.logo}
-                  alt={`${institution.school} Logo`}
+        <Typography variant="h2" sx={{ textAlign: "center", mb: 2 }}>
+          Education
+        </Typography>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ mb: 6, textAlign: "center", maxWidth: 600, mx: "auto" }}
+        >
+          My academic background and qualifications
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          {educationalInstitutions.map((institution, index) => (
+            <Grid item key={index}>
+              <Card sx={{width: 550}}>
+                <CardContent
                   sx={{
-                    width: 100,
-                    height: 100,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 3,
+                    p: 4,
                   }}
-                ></Box>
-                <Box sx={{textAlign: 'center'}}>
-                  <Typography variant="h5" sx={{ mb: 1 }}>{institution.school}</Typography>
-                  <Typography variant="h6" color="primary" sx={{ mb: 1 }}>{institution.degree}</Typography>
-                  <Typography variant="body1" color="text.secondary">{institution.period}</Typography>
-                  <Typography variant="body1" color="text.secondary">{institution.gpa}</Typography>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+                >
+                  <Box
+                    component="img"
+                    src={institution.logo}
+                    alt={`${institution.school} Logo`}
+                    sx={{
+                      width: 100,
+                      height: 100,
+                    }}
+                  ></Box>
+                  <Box sx={{ textAlign: "center" }}>
+                    <Typography variant="h5" sx={{ mb: 1 }}>
+                      {institution.school}
+                    </Typography>
+                    <Typography variant="h6" color="primary" sx={{ mb: 1 }}>
+                      {institution.degree}
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      {institution.period}
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      {institution.gpa}
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </motion.div>
     </Container>
   );
 };

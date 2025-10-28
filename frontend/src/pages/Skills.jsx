@@ -87,7 +87,7 @@ const Skills = () => {
           Technologies and tools I work with to build amazing applications.
         </Typography>
 
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center">
           {skillCategories.map((category, index) => (
             <Grid item key={index}>
               <motion.div
@@ -98,6 +98,8 @@ const Skills = () => {
                 <Card
                   sx={{
                     textAlign: "center",
+                    width: 400,
+                    height: 180
                   }}
                 >
                   <CardContent sx={{ p: 3 }}>

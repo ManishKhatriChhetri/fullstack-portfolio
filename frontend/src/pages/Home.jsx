@@ -50,6 +50,7 @@ const Home = () => {
                 component={RouterLink}
                 to="/projects"
                 size="large"
+                sx={{width: 200}}
                 endIcon={<ArrowForwardIcon />}
               >
                 View My Work
@@ -59,6 +60,7 @@ const Home = () => {
                 component={RouterLink}
                 to="/contact"
                 size="large"
+                sx={{width: 200}}
               >
                 Get In Touch
               </Button>

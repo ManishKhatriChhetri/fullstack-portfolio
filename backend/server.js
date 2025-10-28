@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const dotenv = require('dotenv');
 const rateLimit = require('express-rate-limit');
 const router = require('./routes/projectRoutes');
+const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 
 // Load Environment variables
@@ -14,6 +15,14 @@ const app = express();
 
 //Connect to MongoDB
 connectDB();
+
+mongoose.connection.on('connected', () => {
+    console.log(`✅MongoDB Connected to: ${mongoose.connection.name}`)
+})
+
+mongoose.connection.on('error', (err) => {
+    console.log(`❌ MongoDB Errpr: ${err}`)
+})
 
 //Middleware
 app.use(helmet());

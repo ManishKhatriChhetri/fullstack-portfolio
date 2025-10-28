@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Education from './pages/Education';
 import Skills from './pages/Skills';
+import Projects from './pages/Projects';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
               <Route path='/about' element={<About />}/>
               <Route path='/education' element={<Education />}/>
               <Route path='/skills' element={<Skills />}/>
+              <Route path='/projects' element={<Projects />}/>
             </Routes>
             
           </Box>
