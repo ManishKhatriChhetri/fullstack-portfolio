@@ -74,7 +74,6 @@ const Contact = () => {
                         height: 100,
                         width: 100,
                         borderRadius: "50%",
-                        border: "2px solid",
                         borderColor: "primary.main",
                         color: "primary.main",
                         background: "rgba(0, 245, 255, 0.1)",
