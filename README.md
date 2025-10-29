@@ -33,7 +33,7 @@ npm install
 
 ### Environment Variables
 
-***Backend (.env):**
+**Backend (.env):**
 ```env
 PORT=5000
 NODE_ENV=development
@@ -41,7 +41,7 @@ MONGODB_URI=your_mongodb_uri
 CLIENT_URL=http://localhost:5173
 ```
 
-***Frontend (.env):**
+**Frontend (.env):**
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
